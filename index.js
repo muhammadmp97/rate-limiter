@@ -3,6 +3,7 @@ import redis from './src/clients/redis.js'
 import rateLimiter from './src/middlewares/rate-limiter.js'
 
 const app = express()
+const port = process.env.npm_config_port ?? 3000
 
 app.use(rateLimiter)
 
@@ -18,8 +19,8 @@ app.get('/somewhere', async (req, res) => {
   res.send('SOMEWHERE')
 })
 
-app.listen(3000, () => {
-  console.log(`App is running...`)
+app.listen(port, () => {
+  console.log(`App is running on port ${port}`)
 })
 
 app.on('close', () => {
