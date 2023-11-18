@@ -1,7 +1,7 @@
 # rate-limiter
 
 ## How to run  
-1. Install and run Redis
+1. Install and run [Redis](https://hub.docker.com/_/redis)
 2. Run `npm install`
 3. Run `npm run dev --port=3000`
 4. Open http://127.0.0.1:3000 in your browser.
