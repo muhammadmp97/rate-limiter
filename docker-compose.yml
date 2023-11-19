@@ -1,7 +1,7 @@
 version: '3.8'
 services:
-  exam1server:
-    image: rate-limiter
+  app:
+    build: .
     container_name: rate-limiter
     ports:
       - '3000:3000'
