@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  exam1server:
+    image: rate-limiter
+    container_name: rate-limiter
+    ports:
+      - '3000:3000'
+    networks:
+      - mynetwork
+    depends_on:
+      - redis
+  redis:
+    container_name: redis-service
+    image: redis:latest
+    restart: always
+    command: redis-server --save
+    ports:
+      - '6379:6379'
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
+    driver: bridge
